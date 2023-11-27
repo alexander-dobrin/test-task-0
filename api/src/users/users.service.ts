@@ -1,6 +1,7 @@
 import { Request } from 'express';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as promises from 'timers/promises';
 import { GetUsersQueryDto } from './dto/getUsersQuery.dto';
 import { User } from './interfaces';
 
@@ -17,7 +18,7 @@ export class UsersService {
     const secondsDelay = 5;
 
     for (let i = 0; i < secondsDelay; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await promises.setTimeout(1000);
       if (isReqCanceled) {
         return [];
       }
