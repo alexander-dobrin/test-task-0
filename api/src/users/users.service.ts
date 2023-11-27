@@ -28,7 +28,7 @@ export class UsersService {
     users = users.filter((user) => user.email === query.email);
 
     if (query.number) {
-      users = users.filter((user) => user.number === query.number);
+      users = users.filter((user) => Number(user.number) === query.number);
     }
 
     return users;
