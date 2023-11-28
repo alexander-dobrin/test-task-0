@@ -6,7 +6,7 @@ import { GetUsersQueryDto } from './dto/getUsersQuery.dto';
 import { User } from './interfaces';
 
 export class UsersService {
-  async get(query: GetUsersQueryDto, req?: Request) {
+  async get(query: GetUsersQueryDto, req: Request) {
     const usersJsonPath = path.resolve('assets', 'users.json');
     const usersJson = fs.readFileSync(usersJsonPath, 'utf8');
     let isReqCanceled = false;
