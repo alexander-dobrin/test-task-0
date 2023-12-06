@@ -19,7 +19,6 @@ export const Form = () => {
   const [isRequestSent, setIsRequestSent] = useState(false);
 
   const formSchema = z.object({
-    // Схема валидации формы
     email: z.string().email({ message: "Неверный e-mail" }),
     number: z.string().optional(),
   });
